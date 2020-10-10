@@ -235,7 +235,11 @@ int main(void) {
                 // - closing the current element on close parenthesis,
                 // - escaping the next character on backslash
 
-                if (current == '(') {
+                if (current == '<') {
+                    fputs("&lt;", stdout);
+                } else if (current == '>') {
+                    fputs("&gt;", stdout);
+                } else if (current == '(') {
                     start_element_name();
                 } else if (current == ')') {
                     pop_name();
